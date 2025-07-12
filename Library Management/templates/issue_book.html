@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Issue Book</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #2980b9;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 28px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 25px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+            color: #2c3e50;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="email"],
+        input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+        input[type="submit"] {
+            background-color: #2980b9;
+            color: white;
+            border: none;
+            padding: 12px 15px;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-top: 20px;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #1f618d;
+        }
+
+        .delete-btn {
+            background-color: #c0392b !important;
+        }
+
+        .links {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .links a {
+            margin: 0 10px;
+            color: #2980b9;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+
+        hr {
+            margin: 40px 0;
+            border: none;
+            border-top: 2px solid #eee;
+        }
+    </style>
+</head>
+<body>
+
+    <header>Librarian Portal</header>
+
+    <div class="container">
+        <h1>📚 Issue Book to Student</h1>
+
+        <form action="/issue_book" method="POST">
+            <label>Issue ID:</label>
+            <input type="number" name="issue_id" required>
+
+            <label>Book ID:</label>
+            <input type="number" name="book_id" required>
+
+            <label>Student ID:</label>
+            <input type="number" name="student_id" required>
+
+            <label>Issue Date:</label>
+            <input type="date" name="issue_date" required>
+
+            <label>Return Date:</label>
+            <input type="date" name="return_date" required>
+
+            <input type="submit" value="Issue Book">
+        </form>
+
+        <hr>
+
+        <h2>🗑️ Delete Issued Book</h2>
+        <form action="/delete_issue" method="POST">
+            <label>Issue ID:</label>
+            <input type="number" name="delete_issue_id" required>
+
+            <input type="submit" value="Delete Issue" class="delete-btn">
+        </form>
+
+        <div class="links">
+            <a href="/issues">📄 View Issue History</a> |
+            <a href="/">🏠 Home</a>
+        </div>
+    </div>
+
+</body>
+</html>

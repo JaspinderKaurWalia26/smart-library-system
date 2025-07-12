@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Book to Library</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #2980b9;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 28px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 25px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+            color: #2c3e50;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+        input[type="submit"] {
+            background-color: #2980b9;
+            color: white;
+            border: none;
+            padding: 12px 15px;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-top: 20px;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #1f618d;
+        }
+
+        .links {
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        .links a {
+            margin: 0 10px;
+            color: #2980b9;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <header>Librarian Portal</header>
+
+    <div class="container">
+        <h1>Add Book to Library</h1>
+
+        <form action="/add_book" method="POST">
+            <label>Book ID:</label>
+            <input type="number" name="book_id" required>
+
+            <label>Title:</label>
+            <input type="text" name="title" required>
+
+            <label>Author:</label>
+            <input type="text" name="author" required>
+
+            <label>Publisher:</label>
+            <input type="text" name="publisher" required>
+
+            <label>Total Copies:</label>
+            <input type="number" name="total_copies" required>
+
+            <input type="submit" value="Add Book">
+        </form>
+
+        <div class="links">
+            <a href="/books">📘 View Book List</a> |
+            <a href="/add_student">👩‍🎓 Add Student</a> |
+            <a href="/issue_book">📖 Issue Book</a>
+        </div>
+    </div>
+
+</body>
+</html>
